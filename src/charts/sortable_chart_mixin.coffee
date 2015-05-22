@@ -6,11 +6,11 @@ Ember.Charts.SortableChartMixin = Ember.Mixin.create
   sortedData: Ember.computed ->
     data = @get 'data'
     key = @get 'sortKey'
-    order = @get 'sortAscending'
+    sortAscending = @get 'sortAscending'
     if Ember.isEmpty(data)
       []
     else if key?
-      if order
+      if sortAscending
         data.sortBy key
       else
         data.sortBy(key).reverse()

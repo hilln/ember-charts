@@ -1219,14 +1219,14 @@ Ember.Charts.SortableChartMixin = Ember.Mixin.create({
   sortKey: 'value',
   sortAscending: true,
   sortedData: Ember.computed(function() {
-    var data, key, order;
+    var data, key, sortAscending;
     data = this.get('data');
     key = this.get('sortKey');
-    order = this.get('sortAscending');
+    sortAscending = this.get('sortAscending');
     if (Ember.isEmpty(data)) {
       return [];
     } else if (key != null) {
-      if (order) {
+      if (sortAscending) {
         return data.sortBy(key);
       } else {
         return data.sortBy(key).reverse();
